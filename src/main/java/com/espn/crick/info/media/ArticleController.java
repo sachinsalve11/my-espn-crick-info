@@ -23,8 +23,7 @@ public class ArticleController {
     @GetMapping("/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable Long id) {
         Optional<Article> article = articleService.getArticleById(id);
-        return article.map(ResponseEntity::ok)
-                      .orElseGet(() -> ResponseEntity.notFound().build());
+        return article.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -35,8 +34,7 @@ public class ArticleController {
     @PutMapping("/{id}")
     public ResponseEntity<Article> updateArticle(@PathVariable Long id, @RequestBody Article article) {
         Optional<Article> updatedArticle = articleService.updateArticle(id, article);
-        return updatedArticle.map(ResponseEntity::ok)
-                             .orElseGet(() -> ResponseEntity.notFound().build());
+        return updatedArticle.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")

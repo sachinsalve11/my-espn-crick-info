@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+
 @Entity
 @Data
 public class Article {
@@ -61,5 +62,5 @@ public class Article {
     public void setTags(String tags) {
         this.tags = tags;
     }
-    // Timestamp fields like created_at and updated_at can be added if needed
+
 }
